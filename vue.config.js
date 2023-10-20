@@ -2,7 +2,7 @@ const {ModuleFederationPlugin} = require('webpack').container;
 
 
 module.exports = {
-  publicPath: "https://localhost:8080/",
+  publicPath: "auto",
   configureWebpack: () => {
     return {
       performance: {
