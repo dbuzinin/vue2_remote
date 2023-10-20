@@ -1,4 +1,4 @@
-const {ModuleFederationPlugin} = require('webpack').container;
+//const {ModuleFederationPlugin} = require('webpack').container;
 
 
 module.exports = {
@@ -23,7 +23,7 @@ module.exports = {
         },
       },
       plugins: [
-        new ModuleFederationPlugin({
+        /*new ModuleFederationPlugin({
           name: "remote_app",
           filename: 'remoteEntry.js',
           exposes: {
@@ -35,7 +35,7 @@ module.exports = {
               eager: true,
             },
           },
-        }),
+        }),*/
         // FEATURE этот плагин делает все в prefetch в index.html, надо поисследовать, так как после этого стала страничка грузиться чуть медленнее
       ].filter(Boolean),
     };
