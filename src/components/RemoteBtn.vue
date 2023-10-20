@@ -11,9 +11,13 @@ export default class RemoteBtn extends Vue {
 </script>
 
 <template>
-<div class="btn">My btn {{item}}</div>
+<div class="btn" @click="$emit('load')">My btn {{item}}</div>
 </template>
 
 <style scoped>
-
+.btn {
+  padding: 8px;
+  background-color: #42b983;
+  color: white;
+}
 </style>
