@@ -1,8 +1,8 @@
-//const {ModuleFederationPlugin} = require('webpack').container;
+const {ModuleFederationPlugin} = require('webpack').container;
 
-
+const deps = require('./package.json').dependencies;
 module.exports = {
-  publicPath: "/",
+  publicPath: "auto",
   configureWebpack: () => {
     return {
       performance: {
@@ -23,19 +23,20 @@ module.exports = {
         },
       },
       plugins: [
-        /*new ModuleFederationPlugin({
+          new ModuleFederationPlugin({
           name: "remote_app",
           filename: 'remoteEntry.js',
           exposes: {
             './RemoteBtn': './src/components/RemoteBtn',
           },
           shared: {
-            ...require('./package.json').dependencies,
+            ...deps,
             vue: {
-              eager: true,
+              requiredVersion: deps.vue,
+              singleton: true,
             },
           },
-        }),*/
+        }),
         // FEATURE этот плагин делает все в prefetch в index.html, надо поисследовать, так как после этого стала страничка грузиться чуть медленнее
       ].filter(Boolean),
     };
