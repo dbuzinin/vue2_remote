@@ -2,7 +2,7 @@ const {ModuleFederationPlugin} = require('webpack').container;
 
 
 module.exports = {
-  publicPath: "auto",
+  publicPath: "/",
   configureWebpack: () => {
     return {
       performance: {
