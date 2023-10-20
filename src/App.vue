@@ -1,6 +1,8 @@
 <template>
   <div id="app">
     <div id="nav">
+      <RemoteBtn></RemoteBtn>
+
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
@@ -30,3 +32,6 @@
   color: #42b983;
 }
 </style>
+<script setup lang="ts">
+import RemoteBtn from "@/components/RemoteBtn.vue";
+</script>
