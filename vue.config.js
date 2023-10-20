@@ -29,7 +29,12 @@ module.exports = {
           exposes: {
             './RemoteBtn': './src/components/RemoteBtn',
           },
-          shared: require('./package.json').dependencies,
+          shared: {
+            ...require('./package.json').dependencies,
+            vue: {
+              eager: true,
+            },
+          },
         }),
         // FEATURE этот плагин делает все в prefetch в index.html, надо поисследовать, так как после этого стала страничка грузиться чуть медленнее
       ].filter(Boolean),
