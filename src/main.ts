@@ -5,8 +5,11 @@ import store from './store'
 
 Vue.config.productionTip = false
 
-new Vue({
+const instance = new Vue({
   router,
   store,
   render: h => h(App)
-}).$mount('#app')
+})
+instance.$mount('#app2')
+
+export default instance

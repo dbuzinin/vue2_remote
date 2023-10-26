@@ -5,8 +5,9 @@ import { Vue, Component, Prop } from 'vue-property-decorator';
 export default class RemoteBtn extends Vue {
   @Prop({default: false}) item!: boolean;
   @Prop({default: 'My remote btn'}) value!: string;
+
   mounted(): void {
-    console.log('Remote_btn', this)
+    console.log('Remote_btn mounted', this)
   }
 }
 </script>

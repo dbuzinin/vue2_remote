@@ -9,10 +9,10 @@ module.exports = {
         hints: false,
       },
       optimization: {
-        /* // Имена модулей будут осмысленными. Помогает при отладке. На размер бандла влияет крайне мало
+         // Имена модулей будут осмысленными. Помогает при отладке. На размер бандла влияет крайне мало
          moduleIds: 'named',
          // Имена чанков будут осмысленными. Помогает при отладке. На размер бандла влияет крайне мало
-         chunkIds: 'named',*/
+         chunkIds: 'named',
         splitChunks: false,
       },
       devtool: process.env.VUE_APP_SENTRY_RELEASE ? 'source-map' : 'eval-cheap-module-source-map',
@@ -28,6 +28,8 @@ module.exports = {
           filename: 'remoteEntry.js',
           exposes: {
             './RemoteBtn': './src/components/RemoteBtn',
+            './TestMain': './src/main.ts',
+            './Sum': './src/sum.ts',
           },
           /*shared: require('./package.json').dependencies,*/
           shared: {
