@@ -1,20 +1,29 @@
-<script lang="ts">
-import { Vue, Component, Prop } from 'vue-property-decorator';
+<template>
+  <div class="btn" @click="emit('click', true)">{{value}}</div>
+</template>
 
-@Component({})
-export default class RemoteBtn extends Vue {
-  @Prop({default: false}) item!: boolean;
-  @Prop({default: 'My remote btn'}) value!: string;
+<script lang="ts" setup>
+import { defineProps, onMounted, withDefaults, defineEmits } from "vue";
 
-  mounted(): void {
-    console.log('Remote_btn mounted', this)
-  }
+type Prop = {
+  value: string
 }
+const emit = defineEmits<{
+  (e: 'click', value: boolean): void;
+}>()
+
+
+withDefaults(defineProps<Prop>(), {
+  value: 'empty'
+})
+
+onMounted(() => {
+  console.log('Remote_btn mounted');
+})
+
 </script>
 
-<template>
-<div class="btn" @click="$emit('click')">{{value}}</div>
-</template>
+
 
 <style scoped>
 .btn {

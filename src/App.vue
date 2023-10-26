@@ -3,6 +3,7 @@
     <div id="nav">
       <div>
         <RemoteBtn></RemoteBtn>
+        <RemoteTest></RemoteTest>
       </div>
 
 
@@ -37,4 +38,5 @@
 </style>
 <script setup lang="ts">
 import RemoteBtn from "@/components/RemoteBtn.vue";
+import RemoteTest from "@/components/RemoteTest.vue";
 </script>

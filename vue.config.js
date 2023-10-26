@@ -28,6 +28,7 @@ module.exports = {
           filename: 'remoteEntry.js',
           exposes: {
             './RemoteBtn': './src/components/RemoteBtn',
+            './RemoteTest': './src/components/RemoteTest',
             './TestMain': './src/main.ts',
             './Sum': './src/sum.ts',
           },
