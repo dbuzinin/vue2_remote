@@ -32,6 +32,7 @@ module.exports = {
             './TestMain': './src/main.ts',
             './Sum': './src/sum.ts',
           },
+          library: { type: 'var', name: 'remote_app' },
           /*shared: require('./package.json').dependencies,*/
           shared: {
             vue: {
