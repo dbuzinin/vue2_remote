@@ -4,7 +4,7 @@
 
 <script lang="ts" setup>
 import { defineProps, onMounted, withDefaults, defineEmits } from "vue";
-
+console.warn('setup')
 type Prop = {
   value: string
 }
