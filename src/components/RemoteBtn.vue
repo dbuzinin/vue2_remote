@@ -17,7 +17,7 @@ withDefaults(defineProps<Prop>(), {
   value: 'empty'
 })
 
-onMounted(() => {
+onMounted(function () {
   console.log('Remote_btn mounted');
 })
 
